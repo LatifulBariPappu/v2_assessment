@@ -68,6 +68,8 @@ public class JsonResponse {
 
         public String getValue() { return value; }
         public ReferTo getReferTo() { return referTo; }
+
+
     }
 
     public class Validation {

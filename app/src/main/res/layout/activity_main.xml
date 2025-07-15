@@ -5,13 +5,12 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".activity.MainActivity">
 
     <LinearLayout
-        android:id="@+id/multipleChoiceLayout"
+        android:id="@+id/parentLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-
         android:gravity="center"
         android:orientation="vertical"
         android:padding="16dp"
@@ -22,23 +21,115 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:text="@string/select_an_option_multiple_choice_radiobutton"
+            android:id="@+id/questionText"
+            android:text=""
             android:textSize="14sp"
-            android:gravity="center"
             android:textStyle="bold"
             android:layout_margin="16dp" />
-
-        <RadioButton
-            android:id="@+id/radioOption1"
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/multiple_choice_1" />
+            android:id="@+id/multipleChoiceLayout"
+            android:gravity="center"
+            android:orientation="vertical">
+            <RadioGroup
+                android:id="@+id/multipleChoiceGroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" />
 
-        <RadioButton
-            android:id="@+id/radioOption2"
-            android:layout_width="wrap_content"
+
+<!--            <RadioButton-->
+<!--                android:id="@+id/radioOption1"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="@string/multiple_choice_1" />-->
+
+<!--            <RadioButton-->
+<!--                android:id="@+id/radioOption2"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="@string/multiple_choice_2" />-->
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/multiple_choice_2" />
+            android:id="@+id/numberInputLayout"
+            android:gravity="center"
+            android:orientation="vertical">
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/numberInput"
+                android:inputType="number" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/dropDownLayout"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_marginTop="32dp">
+
+
+            <Spinner
+                android:id="@+id/spinnerOption"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:spinnerMode="dropdown" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/checkboxLayout"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <CheckBox
+                android:id="@+id/checkbox1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Option 1" />
+
+            <CheckBox
+                android:id="@+id/checkbox2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Option 2" />
+
+            <CheckBox
+                android:id="@+id/checkbox3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Option 3" />
+
+            <CheckBox
+                android:id="@+id/checkbox4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Option 4" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/cameraLayout"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/cameraImageView"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:src="@drawable/camera"/>
+
+        </LinearLayout>
+
+
+
 
     </LinearLayout>
 
@@ -63,6 +154,19 @@
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/submitBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="30dp"
+        android:backgroundTint="@color/primary"
+        android:text="@string/submit"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
